@@ -40,7 +40,7 @@ fn main() {
     // Variables can be overwritten with shadowing
     let mutable = true; // this is fine
 
-    /* HEADER: Compound types - Array and Tuples */
+    /*  HEADER: Compound types - Array and Tuples */
     
     // Array signature consists of of Type T and lenght as [T; length]
     let my_array: [i32, 5] = [1,2,3,4,5];
