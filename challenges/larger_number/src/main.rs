@@ -4,11 +4,11 @@
 // 3. Returns the larger number
 // Bonus: Handle the case where they're equal!
 
-fn larger_number(num_one: i32, num_two: i32) -> i32 {
-    if num_one > num_two {
-        num_one
-    } else {
-        num_two
+fn larger_number_match(num_one: i32, num_two: i32) -> i32 {
+    match num_one.cmp(&num_two) {
+        std::cmp::Ordering::Greater => num_one,
+        std::cmp::Ordering::Less => num_two,
+        std::cmp::Ordering::Equal => num_one,
     }
 }
 fn main() {
@@ -16,6 +16,5 @@ fn main() {
     let x = 5;
     let y = 10;
 
-    let result = larger_number(x, y);
-    println!("Larger number: {}", result);
+    println!("Using match: {}", larger_number_match(x, y))
 }
