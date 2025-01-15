@@ -16,4 +16,15 @@ fn main() {
     // Indexing starts at 0
     println!("First element of the array: {}", xs[0]);
     println!("Second element of the array: {}", xs[1]);
+
+
+    // `len` return the counts of elements in the array
+    println!("Number of elements in the array: {}", xs.len())
+
+    // Arrays are stock allocated
+    println!("Array occupies {} bytes", mem::size_of_val(&xs))
+
+    // Array can be automatically borrowed as slices
+    println!("Borrow the whole array as a slice.")
+    analyze_slice(&xs);
 }
