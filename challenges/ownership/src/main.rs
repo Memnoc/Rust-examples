@@ -6,18 +6,14 @@
 // Bonus: Handle multiple spaces correctly
 
 fn reverse_word(input: &str) -> String {
-    let mut reversed_string = String::new();
+    let words: Vec<&str> = input.split_whitespace().collect();
 
-    for c in input.chars().rev() {
-        reversed_string.push(c);
-    }
-    reversed_string
+    words.into_iter().rev().collect::<Vec<&str>>().join(" ")
 }
 
 fn main() {
     println!("== String Manipulation and Ownership ==");
-    let text: &str = "hello";
-    let reversed_string = reverse_word(text);
-
-    println!("Reversed string: {}", reversed_string);
+    let text: &str = "hello world rust";
+    let reversed = reverse_word(text);
+    println!("Original: '{}'\nReversed: '{}'\n", text, reversed)
 }
